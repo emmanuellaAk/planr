@@ -1,6 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
-import Planrr from '@/public/planrrrr.png'
 import { AuthModal } from './AuthModal'
 export function Navbar() {
   return (
