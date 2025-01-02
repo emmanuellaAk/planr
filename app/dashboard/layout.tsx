@@ -1,5 +1,6 @@
-import { ReactNode } from "react";
+
 import Link from "next/link";
+import { DashboardLinks } from "../components/DashboardLinks";
 export default function DashboardLayout() {
   return (
     <>
@@ -14,7 +15,7 @@ export default function DashboardLayout() {
 
       <div className="flex-1">
        <nav className="grid items-start px-2 lg:px-4">
-          
+         <DashboardLinks/> 
        </nav>
       </div>
      </div>
