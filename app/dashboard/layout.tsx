@@ -1,4 +1,4 @@
-
+import { ReactNode } from "react";
 import Link from "next/link";
 import { DashboardLinks } from "../components/DashboardLinks";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -9,7 +9,8 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
 import { auth, signOut } from "../lib/auth";
 import { DropdownMenuSeparator } from "@radix-ui/react-dropdown-menu";
 import { requireUser } from "../lib/hooks";
-export default async function DashboardLayout() {
+
+export default async function DashboardLayout({children}: {children: ReactNode}) {
   const session = await requireUser();
   return (
     <>
@@ -73,6 +74,9 @@ export default async function DashboardLayout() {
       </DropdownMenu>
      </div>
  </header>
+ <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
+  {children}
+ </main>
     </div>
     </div>
     </>
